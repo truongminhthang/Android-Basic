@@ -35,7 +35,11 @@ import kotlinx.android.synthetic.main.green_cell.view.*
  * If you don't like our puns, we named this Adapter GreenAdapter because its
  * contents are green.
  */
-class GreenAdapter (val context: Context, val numberOfItems : Int): RecyclerView.Adapter<GreenAdapter.GreenViewHolder>() {
+class GreenAdapter (val context: Context, val numberOfItems : Int, val listItemClickListener: ListItemClickListener): RecyclerView.Adapter<GreenAdapter.GreenViewHolder>() {
+
+    interface ListItemClickListener {
+        fun onListItemClick(clickedItemIndex: Int)
+    }
 
     private val tag = GreenAdapter::class.java.simpleName
     private var viewHolderCount = 0
@@ -56,11 +60,15 @@ class GreenAdapter (val context: Context, val numberOfItems : Int): RecyclerView
 
     override fun onBindViewHolder(holder: GreenViewHolder, position: Int) {
         holder.bindData(position)
+        holder.itemView.setOnClickListener {
+            listItemClickListener.onListItemClick(position)
+        }
     }
 
     class GreenViewHolder(item: View): RecyclerView.ViewHolder(item) {
         fun bindData(number: Int) {
             itemView.tv_item_number.text = number.toString()
         }
+
     }
 }
