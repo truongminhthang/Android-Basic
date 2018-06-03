@@ -35,7 +35,9 @@ import kotlinx.android.synthetic.main.green_cell.view.*
  * If you don't like our puns, we named this Adapter GreenAdapter because its
  * contents are green.
  */
-class GreenAdapter (val context: Context, val numberOfItems : Int, val listItemClickListener: ListItemClickListener): RecyclerView.Adapter<GreenAdapter.GreenViewHolder>() {
+class GreenAdapter (val context: Context,
+                    val numberOfItems : Int,
+                    val listItemClickListener: ListItemClickListener): RecyclerView.Adapter<GreenAdapter.GreenViewHolder>() {
 
     interface ListItemClickListener {
         fun onListItemClick(clickedItemIndex: Int)
