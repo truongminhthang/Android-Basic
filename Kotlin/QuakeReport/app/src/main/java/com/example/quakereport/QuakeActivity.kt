@@ -6,7 +6,8 @@ import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_quake.*
-import kotlin.properties.Delegates
+import java.util.*
+
 
 class QuakeActivity : AppCompatActivity(), QuakeAdapter.QuakeClickListener {
 
@@ -32,3 +33,6 @@ class QuakeActivity : AppCompatActivity(), QuakeAdapter.QuakeClickListener {
     }
 
 }
+
+
+

@@ -34,7 +34,7 @@ class QuakeAdapter(val context: Context, var earthQuakes: List<Quake>, var itemC
         fun bindingData(quake: Quake) {
             itemView.magnitude.text = quake.magnitude
             itemView.location.text = quake.location
-            itemView.date.text = quake.date
+            itemView.date.text = quake.date.toTimeString()
         }
     }
 
